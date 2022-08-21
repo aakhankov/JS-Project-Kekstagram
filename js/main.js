@@ -14,23 +14,23 @@ import { debounce } from './utils/debounce.js';
 const RERENDER_DELAY = 500; //задержка прорисовки изображений
 
 getData((pictures) => {
-    renderPictures(pictures);
-    addPicturesClicEvent(pictures);
+	renderPictures(pictures);
+	addPicturesClicEvent(pictures);
 
-    sortDefaultClick(debounce(
-        () => renderPictures(pictures),
-        RERENDER_DELAY,
-    ));
+	sortDefaultClick(debounce(
+		() => renderPictures(pictures),
+		RERENDER_DELAY,
+	));
 
-    sortRandomClick(debounce(
-        () => renderPictures(pictures),
-        RERENDER_DELAY,
-    ));
+	sortRandomClick(debounce(
+		() => renderPictures(pictures),
+		RERENDER_DELAY,
+	));
 
-    sortDiscussedClick(debounce(
-        () => renderPictures(pictures),
-        RERENDER_DELAY,
-    ));
+	sortDiscussedClick(debounce(
+		() => renderPictures(pictures),
+		RERENDER_DELAY,
+	));
 });
 
 setUserFormSubmit(uploadClose);
