@@ -3,7 +3,7 @@ import { sortBlock } from './sort.js';
 
 
 const getData = (onSuccess) => {
-	fetch('https://24.javascript.pages.academy/kekstagram/data')
+  fetch('https://24.javascript.pages.academy/kekstagram/data')
 		.then((response) => response.json())
 		.then((pictures) => {
 			onSuccess(pictures);
