@@ -1,11 +1,11 @@
 import './../nouislider/nouislider.js';
-import './form-validity.js';
 import './scale.js';
 import './filters.js';
-import {isEscapeKey} from './util.js';
+import {isEscapeKey, showAlert} from './util.js';
 import {uploadForm, uploadFile, uploadPopup, uploadOpen, hashtagField, descriptionField} from './form-validity.js';
-import { scaleBigger, scaleControlBigger, scaleControlSmaller, scaleSmaller } from './scale.js';
-import { onFilterChange } from './filters.js';
+import { scaleBigger, scaleControlBigger, scaleControlSmaller, scaleControlValue, scaleSmaller, scaleValueHidden } from './scale.js';
+import { onFilterChange, sliderElement, uploadPreview, valueElement } from './filters.js';
+import { sentData } from './api.js';
 
 const uploadCancel = uploadForm.querySelector('#upload-cancel'); // «Крестик» для закрытия всплывающего окна
 
@@ -22,11 +22,23 @@ const onPopupEscKeydown = (evt) => {
 const uploadClose = () => {
   uploadPopup.classList.add('hidden');
   document.body.classList.remove('modal-open');
-
+  
+  //значение полей формы
   uploadFile.value = '';
   hashtagField.value = '';
   descriptionField.value = '';
 
+  //фильтры 
+  sliderElement.classList.add('hidden');
+  uploadPreview.style.filter = 'none';
+  valueElement.value = 'none';
+
+  //размеры
+  scaleValueHidden.value = 100;
+  uploadPreview.style.transform = 'scale(1)';
+  scaleControlValue.value = '100%';
+
+  //обработчики
   scaleControlSmaller.removeEventListener('click', scaleSmaller);
   scaleControlBigger.removeEventListener('click', scaleBigger);
   uploadForm.removeEventListener('change', onFilterChange);
@@ -41,4 +53,17 @@ uploadCancel.addEventListener('click', () => {
   uploadClose();
 });
 
-export {onPopupEscKeydown};
+//событие при нажатии на кнопку публикации
+const setUserFormSubmit = (onSuccess) => {
+  uploadForm.addEventListener('submit', (evt) => {
+    evt.preventDefault();
+
+    sentData(
+      () => onSuccess(), 
+      () => showAlert('Не удалось отправить форму. Попробуйте еще раз'), 
+      new FormData(evt.target),
+    );
+  });
+};
+
+export {onPopupEscKeydown, setUserFormSubmit, uploadClose};
