@@ -8,54 +8,54 @@ const sortInput = sortBlock.querySelector('#sort-input'); //скрытый ин�
 
 //по умолчанию - фотографии в изначальном порядке с сервера
 const sortDefaultClick = (cb) => {
-	sortDefault.addEventListener('click', () => {
-		sortDefault.classList.add('img-filters__button--active');
-		sortRandom.classList.remove('img-filters__button--active');
-		sortDiscussed.classList.remove('img-filters__button--active');
+    sortDefault.addEventListener('click', () => {
+        sortDefault.classList.add('img-filters__button--active');
+        sortRandom.classList.remove('img-filters__button--active');
+        sortDiscussed.classList.remove('img-filters__button--active');
 
-		sortInput.value = 'default';
-		cb();
-	});
+        sortInput.value = 'default';
+        cb();
+    });
 };
 
 //Случайные - 10 случайцных не повторяющихся фото
 const sortRandomClick = (cb) => {
-	sortRandom.addEventListener('click', () => {
-		sortDefault.classList.remove('img-filters__button--active');
-		sortRandom.classList.add('img-filters__button--active');
-		sortDiscussed.classList.remove('img-filters__button--active');
+    sortRandom.addEventListener('click', () => {
+        sortDefault.classList.remove('img-filters__button--active');
+        sortRandom.classList.add('img-filters__button--active');
+        sortDiscussed.classList.remove('img-filters__button--active');
 
-		sortInput.value = 'random';
-		cb();
-	});
+        sortInput.value = 'random';
+        cb();
+    });
 };
 
 //обсуждаемые - фотографии, отсортированние в порядке убывания количества комментариев
 const sortDiscussedClick = (cb) => {
-	sortDiscussed.addEventListener('click', () => {
-		sortDefault.classList.remove('img-filters__button--active');
-		sortRandom.classList.remove('img-filters__button--active');
-		sortDiscussed.classList.add('img-filters__button--active');
+    sortDiscussed.addEventListener('click', () => {
+        sortDefault.classList.remove('img-filters__button--active');
+        sortRandom.classList.remove('img-filters__button--active');
+        sortDiscussed.classList.add('img-filters__button--active');
 
-		sortInput.value = 'discussed';
-		cb();
-	});
+        sortInput.value = 'discussed';
+        cb();
+    });
 };
 
 // функция сортировки изображений по id (по умолчанию)
 const comparePicturesIds = (pictureA, pictureB) => {
-	const rankIdA = pictureA.id;
-	const rankIdB = pictureB.id;
+    const rankIdA = pictureA.id;
+    const rankIdB = pictureB.id;
 
-	return rankIdA - rankIdB;
+    return rankIdA - rankIdB;
 };
 
 // функция сортировки изображений по комментариям (обсуждаемые)
 const comparePicturesComments = (pictureA, pictureB) => {
-	const rankCommentsA = pictureA.comments.length;
-	const rankCommentsB = pictureB.comments.length;
+    const rankCommentsA = pictureA.comments.length; 
+    const rankCommentsB = pictureB.comments.length; 
+    
+    return rankCommentsB - rankCommentsA; 
+}; 
 
-	return rankCommentsB - rankCommentsA;
-};
-
-export { sortBlock, sortInput, comparePicturesIds, comparePicturesComments, sortDefaultClick, sortRandomClick, sortDiscussedClick };
+export {sortBlock, sortInput, comparePicturesIds, comparePicturesComments, sortDefaultClick, sortRandomClick, sortDiscussedClick};
