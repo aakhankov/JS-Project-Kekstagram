@@ -14,4 +14,4 @@ function createObject() {
   return arrayObjects;
 }
 
-export {createObject}
+export {createObject};
