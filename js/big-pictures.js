@@ -87,6 +87,3 @@ const openBigPicture = (evt, pictures) => {
 };
 
 export {bigPicture, openBigPicture, bigPictureCommentsLoader};
-
-
-
