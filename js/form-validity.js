@@ -1,4 +1,6 @@
 import {DESCRIPTION_MAX_LENGTH, HASHTAG_MIN_LENGTH, HASHTAG_MAX_LENGTH, HASHTAG_MAX_QUANTITY} from './data.js';
+import { scaleBigger, scaleControlBigger, scaleControlSmaller, scaleSmaller } from './scale.js';
+import { onFilterChange } from './filters.js';
 import {onPopupEscKeydown} from './form.js';
 
 const uploadForm = document.querySelector('.img-upload__form'); // Форма загрузки и редактирования изображений
@@ -79,6 +81,13 @@ const uploadOpen = () => {
             descriptionField.setAttribute('title', `Осталось ${DESCRIPTION_MAX_LENGTH - descriptionField.value.length} символов`);
         }
     });
+
+    //масштабируем изображение 
+    scaleControlSmaller.addEventListener('click', scaleSmaller);
+    scaleControlBigger.addEventListener('click', scaleBigger);
+
+    //обработчик фильтров изображения
+    uploadForm.addEventListener('change', onFilterChange);
 
     document.addEventListener('keydown', onPopupEscKeydown); // Закрытие модального окна при нажатии на ESC
 
