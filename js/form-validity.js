@@ -64,7 +64,6 @@ const checkHashtagField = () => {
 const uploadOpen = () => {
     uploadPopup.classList.remove('hidden');
     document.body.classList.add('modal-open');
-    //uploadPreview.src = uploadFile.value; //превью загружаемого изображения пользователя
 
     //обработчик хэш-тегов при вводе
     hashtagField.addEventListener('input', () => {

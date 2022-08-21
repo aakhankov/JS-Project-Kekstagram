@@ -58,6 +58,8 @@ const HASHTAG_MIN_LENGTH = 2; // Минимальная длина одного 
 const HASHTAG_MAX_LENGTH = 20; // Максимальная длина одного хэш-тега
 const HASHTAG_MAX_QUANTITY = 5; // Максимальное количество хэш-тегов в одном посте
 
+const FILE_TYPES = ['jpg', 'jpeg', 'png']; // Типы принимаемых файлов
+
 export {
   MESSAGES,
   NAMES,
@@ -71,5 +73,6 @@ export {
   HASHTAG_MIN_LENGTH,
   HASHTAG_MAX_LENGTH,
   HASHTAG_MAX_QUANTITY,
+  FILE_TYPES, 
   SHOWN_COMMENTS_MAX
 };

@@ -41,7 +41,7 @@ const showAlert = (message) => {
   }, ALERT_SHOW_TIME);
 };
 
-//сообщение об успешной отпрвке 
+//сообщение об успешной отправке 
 const showMessage = (message) => {
   const messageContainer = document.createElement('div');
   messageContainer.style.zIndex = 100;
