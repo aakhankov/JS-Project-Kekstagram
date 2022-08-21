@@ -1,3 +1,5 @@
+
+
 // Массив сообщений комментария
 const MESSAGES = [
   'Всё отлично!',
@@ -46,8 +48,28 @@ const DESCRIPTIONS = [
   'Прекрасное время года, чтобы любоваться такими фотографиями',
 ];
 
-const COMMENTS_COUNT = 4; // Количество комментариев
+const COMMENTS_COUNT = 18; // Количество комментариев
 const OBJECTS_COUNT = 25; // Количество генерируемых объектов
 const TOTAL_COMMENTS_COUNT = COMMENTS_COUNT * OBJECTS_COUNT; // Количество всех комментариев на сайте
+const SHOWN_COMMENTS_MAX = 5; // Количество максимально подгружаемых единовременно комментариев
 
-export {MESSAGES, NAMES, SPACES, SURNAMES, DESCRIPTIONS, COMMENTS_COUNT, OBJECTS_COUNT, TOTAL_COMMENTS_COUNT};
+const DESCRIPTION_MAX_LENGTH = 140; // Максимальная длина описания (комментария)
+const HASHTAG_MIN_LENGTH = 2; // Минимальная длина одного хэш-тега
+const HASHTAG_MAX_LENGTH = 20; // Максимальная длина одного хэш-тега
+const HASHTAG_MAX_QUANTITY = 5; // Максимальное количество хэш-тегов в одном посте
+
+export {
+  MESSAGES,
+  NAMES,
+  SPACES,
+  SURNAMES,
+  DESCRIPTIONS,
+  COMMENTS_COUNT,
+  OBJECTS_COUNT,
+  TOTAL_COMMENTS_COUNT,
+  DESCRIPTION_MAX_LENGTH,
+  HASHTAG_MIN_LENGTH,
+  HASHTAG_MAX_LENGTH,
+  HASHTAG_MAX_QUANTITY,
+  SHOWN_COMMENTS_MAX
+};
