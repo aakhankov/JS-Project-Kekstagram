@@ -17,7 +17,7 @@ const getRandomArrayElement = (elements) => elements[getRandomIntFromRange(0, el
 const isEscapeKey = (evt) => evt.key === 'Escape';
 
 //длительность сообщения 
-const ALERT_SHOW_TIME = 5000; 
+const ALERT_SHOW_TIME = 5000;
 
 //сообщение с ошибкой
 const showAlert = (message) => {
@@ -63,4 +63,4 @@ const showMessage = (message) => {
   }, ALERT_SHOW_TIME);
 };
 
-export {getRandomIntFromRange, getRandomArrayElement, isEscapeKey, showAlert, showMessage};
+export { getRandomIntFromRange, getRandomArrayElement, isEscapeKey, showAlert, showMessage };

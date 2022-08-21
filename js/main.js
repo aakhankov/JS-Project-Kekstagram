@@ -1,5 +1,5 @@
 import './api.js';
-import './gallery.js'; 
+import './gallery.js';
 import './form.js';
 import './form-validity.js';
 import './sort.js';

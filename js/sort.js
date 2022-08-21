@@ -52,10 +52,10 @@ const comparePicturesIds = (pictureA, pictureB) => {
 
 // функция сортировки изображений по комментариям (обсуждаемые)
 const comparePicturesComments = (pictureA, pictureB) => {
-    const rankCommentsA = pictureA.comments.length; 
-    const rankCommentsB = pictureB.comments.length; 
-    
-    return rankCommentsB - rankCommentsA; 
-}; 
+    const rankCommentsA = pictureA.comments.length;
+    const rankCommentsB = pictureB.comments.length;
 
-export {sortBlock, sortInput, comparePicturesIds, comparePicturesComments, sortDefaultClick, sortRandomClick, sortDiscussedClick};
+    return rankCommentsB - rankCommentsA;
+};
+
+export { sortBlock, sortInput, comparePicturesIds, comparePicturesComments, sortDefaultClick, sortRandomClick, sortDiscussedClick };

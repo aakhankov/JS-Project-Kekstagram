@@ -1,8 +1,8 @@
 import './../nouislider/nouislider.js';
 import './scale.js';
 import './filters.js';
-import {isEscapeKey, showAlert} from './util.js';
-import {uploadForm, uploadFile, uploadPopup, uploadOpen, hashtagField, descriptionField} from './form-validity.js';
+import { isEscapeKey, showAlert } from './util.js';
+import { uploadForm, uploadFile, uploadPopup, uploadOpen, hashtagField, descriptionField } from './form-validity.js';
 import { scaleBigger, scaleControlBigger, scaleControlSmaller, scaleControlValue, scaleSmaller, scaleValueHidden } from './scale.js';
 import { onFilterChange, sliderElement, uploadPreview, valueElement } from './filters.js';
 import { sentData } from './api.js';
@@ -23,7 +23,7 @@ const onPopupEscKeydown = (evt) => {
 const uploadClose = () => {
   uploadPopup.classList.add('hidden');
   document.body.classList.remove('modal-open');
-  
+
   //значение полей формы
   uploadFile.value = '';
   hashtagField.value = '';
@@ -72,11 +72,11 @@ const setUserFormSubmit = (onSuccess) => {
     evt.preventDefault();
 
     sentData(
-      () => onSuccess(), 
-      () => showAlert('Не удалось отправить форму. Попробуйте еще раз'), 
+      () => onSuccess(),
+      () => showAlert('Не удалось отправить форму. Попробуйте еще раз'),
       new FormData(evt.target),
     );
   });
 };
 
-export {onPopupEscKeydown, setUserFormSubmit, uploadClose};
+export { onPopupEscKeydown, setUserFormSubmit, uploadClose };

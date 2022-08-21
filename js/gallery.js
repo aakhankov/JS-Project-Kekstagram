@@ -1,17 +1,17 @@
 import './big-pictures.js';
 import './pictures.js';
-import {picturesBlock} from './pictures.js';
-import {bigPicture, openBigPicture, bigPictureCommentsLoader} from './big-pictures.js';
-import {isEscapeKey} from './util.js';
+import { picturesBlock } from './pictures.js';
+import { bigPicture, openBigPicture, bigPictureCommentsLoader } from './big-pictures.js';
+import { isEscapeKey } from './util.js';
 
 const bigPictureCancel = bigPicture.querySelector('.big-picture__cancel'); // «Крестик» для закрытия полноразмерного изображения
 
 // Обработчик закрытия окна (галереи)
 const onPopupEscKeydown = (evt) => {
     if (isEscapeKey(evt)) {
-      evt.preventDefault();
-      // eslint-disable-next-line no-use-before-define
-      closeBigPicture();
+        evt.preventDefault();
+        // eslint-disable-next-line no-use-before-define
+        closeBigPicture();
     }
 };
 
@@ -26,7 +26,7 @@ const closeBigPicture = () => {
 // Событие показа модального окна
 const addPicturesClicEvent = (pictures) => {
     picturesBlock.addEventListener('click', (evt) => {
-        if (evt.target.matches('.picture') || evt.target.matches('.picture__img')){
+        if (evt.target.matches('.picture') || evt.target.matches('.picture__img')) {
             openBigPicture(evt, pictures);
         }
     });
@@ -38,5 +38,5 @@ bigPictureCancel.addEventListener('click', () => {
     closeBigPicture();
 });
 
-export {onPopupEscKeydown, addPicturesClicEvent};
+export { onPopupEscKeydown, addPicturesClicEvent };
 

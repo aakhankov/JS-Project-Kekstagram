@@ -9,16 +9,16 @@ const scaleValueHidden = uploadForm.querySelector('.scale__value--hidden'); // �
 
 //масштабированние загружаемого изображения
 const scaleSmaller = () => {
-    if (scaleControlValue.value !== '25%'){
+    if (scaleControlValue.value !== '25%') {
         scaleControlValue.value = `${parseInt(scaleControlValue.value, 10) - 25}%`;
     }
-    if (scaleControlValue.value === '75%'){
+    if (scaleControlValue.value === '75%') {
         uploadPreview.style.transform = 'scale(0.75)';
         scaleValueHidden.value = 75;
-    } else if(scaleControlValue.value === '50%'){
+    } else if (scaleControlValue.value === '50%') {
         uploadPreview.style.transform = 'scale(0.50)';
         scaleValueHidden.value = 50;
-    } else if(scaleControlValue.value === '25%'){
+    } else if (scaleControlValue.value === '25%') {
         uploadPreview.style.transform = 'scale(0.25)';
         scaleValueHidden.value = 25;
     }
@@ -40,4 +40,4 @@ const scaleBigger = () => {
     }
 };
 
-export {scaleControlSmaller, scaleControlBigger, scaleBigger, scaleSmaller, scaleValueHidden, scaleControlValue};
+export { scaleControlSmaller, scaleControlBigger, scaleBigger, scaleSmaller, scaleValueHidden, scaleControlValue };

@@ -125,4 +125,4 @@ const onFilterChange = (evt) => {
     }
 }
 
-export {onFilterChange, uploadPreview, sliderElement, valueElement}
+export { onFilterChange, uploadPreview, sliderElement, valueElement }

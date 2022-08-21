@@ -11,11 +11,11 @@ const renderPictures = (pictures) => {
 
     pictures.slice();
 
-    if (sortInput.value === 'default'){
+    if (sortInput.value === 'default') {
         pictures.sort(comparePicturesIds);
-    } else if (sortInput.value ==='random'){
-        pictures.sort(() => Math.random() - 0.5);  
-    } else if (sortInput.value === 'discussed'){
+    } else if (sortInput.value === 'random') {
+        pictures.sort(() => Math.random() - 0.5);
+    } else if (sortInput.value === 'discussed') {
         pictures.sort(comparePicturesComments);
     }
 
@@ -31,4 +31,4 @@ const renderPictures = (pictures) => {
     picturesBlock.appendChild(picturesFragment);
 };
 
-export{picturesBlock, renderPictures};
+export { picturesBlock, renderPictures };

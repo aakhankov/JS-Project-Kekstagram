@@ -1,5 +1,6 @@
-import { showMessage } from "./util.js";
-import { sortBlock } from "./sort.js";
+import { showMessage } from './util.js';
+import { sortBlock } from './sort.js';
+
 
 const getData = (onSuccess) => {
     fetch('https://24.javascript.pages.academy/kekstagram/data')
@@ -11,15 +12,15 @@ const getData = (onSuccess) => {
 };
 
 const sentData = (onSuccess, onFail, body) => {
-    fetch (
-        'https://24.javascript.pages.academy/kekstagram', 
+    fetch(
+        'https://24.javascript.pages.academy/kekstagram',
         {
             method: 'POST',
             body,
         },
     )
         .then((response) => {
-            if(response.ok) {
+            if (response.ok) {
                 onSuccess();
                 showMessage('Форма успешно отправлена!');
             } else {
@@ -31,4 +32,4 @@ const sentData = (onSuccess, onFail, body) => {
         });
 };
 
-export {getData, sentData};
+export { getData, sentData };
